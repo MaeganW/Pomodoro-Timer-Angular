@@ -1,2 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<button mat-icon-button (click)="onClick()"><mat-icon>{{ hasAudio ? 'volume_up' : 'volume_off'}}</mat-icon></button>
+<button mat-icon-button (click)="onAudioClick()">
+  <mat-icon>{{ hasAudio ? 'volume_up' : 'volume_off'}}</mat-icon>
+</button>
+<button mat-raised-button (click)="onPlayClick()">
+  <mat-icon>{{ isPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+  {{ isPaused ? ' Start' : ' Pause' }}
+</button>

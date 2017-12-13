@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   hasAudio = true;
+  isPaused = true;
 
-  onClick() {
-    console.log('clicked');
+  onAudioClick() {
     this.hasAudio = !this.hasAudio;
+  }
+
+  onPlayClick() {
+    this.isPaused = !this.isPaused;
   }
 }
