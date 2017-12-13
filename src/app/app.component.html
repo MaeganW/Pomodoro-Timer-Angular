@@ -1,4 +1,2 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<button mat-icon-button><mat-icon>volume_up</mat-icon></button>
-<button mat-icon-button><mat-icon>volume_off</mat-icon></button>
-
+<button mat-icon-button (click)="onClick()"><mat-icon>{{ hasAudio ? 'volume_up' : 'volume_off'}}</mat-icon></button>
