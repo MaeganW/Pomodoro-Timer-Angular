@@ -1,7 +1,19 @@
+<header>
+  <h1>Pomodoro Timer</h1>
+</header>
+<app-session-timer></app-session-timer>
+<app-break-timer></app-break-timer>
 <button mat-icon-button (click)="onAudioClick()">
   <mat-icon>{{ hasAudio ? 'volume_up' : 'volume_off'}}</mat-icon>
 </button>
-<button mat-raised-button (click)="onPlayClick()">
-  <mat-icon>{{ isPaused ? 'play_arrow' : 'pause' }}</mat-icon>
-  {{ isPaused ? ' Start' : ' Pause' }}
-</button>
+<div>
+  <button mat-raised-button (click)="onResetClick()">
+    <mat-icon>replay</mat-icon>
+    Reset
+  </button>
+  <button mat-raised-button (click)="onPlayClick()">
+    <mat-icon>{{ isPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+    {{ isPaused ? ' Start' : ' Pause' }}
+  </button>
+</div>
+<app-timer></app-timer>

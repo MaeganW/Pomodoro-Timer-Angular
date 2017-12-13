@@ -16,4 +16,8 @@ export class AppComponent {
   onPlayClick() {
     this.isPaused = !this.isPaused;
   }
+
+  onResetClick() {
+    console.log('request for a reset');
+  }
 }
