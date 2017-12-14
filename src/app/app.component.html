@@ -1,8 +1,20 @@
 <header>
   <h1>Pomodoro Timer</h1>
 </header>
-<app-session-timer></app-session-timer>
-<app-break-timer></app-break-timer>
+<label>Session</label>
+
+<div>
+  <div>
+    <input [(ngModel)]="sessionLength" matInput>
+    <p>{{sessionLength}}</p>
+  </div>
+  <label>Break</label>
+  <div>
+    <input [(ngModel)]="breakLength" matInput>
+    <p>{{breakLength}}</p>
+  </div>
+</div>
+
 <button mat-icon-button (click)="onAudioClick()">
   <mat-icon>{{ hasAudio ? 'volume_up' : 'volume_off'}}</mat-icon>
 </button>

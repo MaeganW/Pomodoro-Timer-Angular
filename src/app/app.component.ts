@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   hasAudio = true;
   isPaused = true;
+  sessionLength = 25;
+  breakLength = 5;
 
   onAudioClick() {
     this.hasAudio = !this.hasAudio;
