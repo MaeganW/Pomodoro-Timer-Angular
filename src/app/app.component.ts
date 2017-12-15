@@ -14,11 +14,12 @@ export class AppComponent {
   sessionTimer = this.sessionLength;
   breakTimer = this.breakLength;
 
-  intervalId: number;
-  timer: number;
+  intervalId: any;
+  timer = 25;
 
   onAudioClick() {
     this.hasAudio = !this.hasAudio;
+    console.log(this.timer);
   }
 
   onPlayClick() {
@@ -37,15 +38,23 @@ export class AppComponent {
   }
 
   playTimer() {
-    this.intervalId = window.setInterval(this.countdown(), 200);
+    this.intervalId = window.setInterval(function() {
+      // if (this.onSession) {
+        console.log(this.timer);
+        this.timer -= 1;
+        console.log('called', this.timer);
+      // }
+      // return false;
+    }, 1000);
   }
 
-  countdown() {
-    if (this.onSession) {
-      this.timer = this.sessionTimer--;
-    }
-    return false;
-  }
+  // timer() {
+  //   if (this.onSession) {
+  //     this.timer--;
+  //     console.log('called', this.timer);
+  //   }
+  //   return false;
+  // }
 
   onResetClick() {
     console.log('request for a reset');
