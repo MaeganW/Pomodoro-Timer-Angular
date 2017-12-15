@@ -11,11 +11,11 @@ export class AppComponent {
   onSession = true;
   sessionLength = 25;
   breakLength = 5;
-  sessionTimer = this.sessionLength;
-  breakTimer = this.breakLength;
+  sessionTimer = this.sessionLength * 60000;
+  breakTimer = this.breakLength * 60000;
 
   intervalId: any;
-  timer = 25;
+  timer = this.sessionTimer;
 
   onAudioClick() {
     this.hasAudio = !this.hasAudio;
@@ -38,13 +38,12 @@ export class AppComponent {
   }
 
   playTimer() {
-    this.intervalId = window.setInterval(function() {
-      // if (this.onSession) {
-        console.log(this.timer);
+    this.intervalId = window.setInterval(() => {
+      if (this.onSession) {
         this.timer -= 1;
         console.log('called', this.timer);
-      // }
-      // return false;
+      }
+      return false;
     }, 1000);
   }
 
@@ -58,7 +57,7 @@ export class AppComponent {
 
   onResetClick() {
     console.log('request for a reset');
-    this.sessionTimer = this.sessionLength;
+    this.timer = this.sessionTimer;
     this.breakTimer = this.breakLength;
   }
 }
