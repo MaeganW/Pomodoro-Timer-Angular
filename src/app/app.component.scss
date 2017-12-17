@@ -5,7 +5,9 @@ $ternary-color: #DF654A;
 $quaternary-color: #CC376D;
 
 body {
-  background-color: $primary-color;
+  font-family: sans-serif;
+  background-color: $quaternary-color;
+  color: $primary-color;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
