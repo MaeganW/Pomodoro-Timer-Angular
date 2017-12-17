@@ -1,36 +1,40 @@
-<header>
-  <h1>Pomodoro Timer</h1>
-</header>
-<label>Session</label>
+<div class="container">
+  <header>
+    <h1>Pomodoro Timer</h1>
+  </header>
+  <label>Session</label>
 
-<div>
-  <div>
-    <input [(ngModel)]="sessionLength" matInput>
-    <p>{{sessionLength}}</p>
+  <div class="lengths">
+    <div>
+      <input [(ngModel)]="sessionLength" matInput>
+      <p>{{sessionLength}}</p>
+    </div>
+    <label>Break</label>
+    <div>
+      <input [(ngModel)]="breakLength" matInput>
+      <p>{{breakLength}}</p>
+    </div>
   </div>
-  <label>Break</label>
-  <div>
-    <input [(ngModel)]="breakLength" matInput>
-    <p>{{breakLength}}</p>
-  </div>
-</div>
 
-<button mat-icon-button (click)="onAudioClick()">
-  <mat-icon>{{ hasAudio ? 'volume_up' : 'volume_off'}}</mat-icon>
-</button>
-<div>
-  <button mat-raised-button (click)="onResetClick()">
-    <mat-icon>replay</mat-icon>
-    Reset
+  <button mat-icon-button (click)="onAudioClick()" class="audio">
+    <mat-icon>{{ hasAudio ? 'volume_up' : 'volume_off'}}</mat-icon>
   </button>
-  <button mat-raised-button (click)="onPlayClick()">
-    <mat-icon>{{ isPaused ? 'play_arrow' : 'pause' }}</mat-icon>
-    {{ isPaused ? ' Start' : ' Pause' }}
-  </button>
-</div>
-<div>
-  <label>Timer</label>
-  <div [textContent]="timer">
-    <!-- {{ timer }} -->
+
+  <div class="controls">
+    <button mat-raised-button (click)="onResetClick()">
+      <mat-icon>replay</mat-icon>
+      Reset
+    </button>
+    <button mat-raised-button (click)="onPlayClick()">
+      <mat-icon>{{ isPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+      {{ isPaused ? ' Start' : ' Pause' }}
+    </button>
+  </div>
+
+  <div class="timer">
+    <label>Timer</label>
+    <div [textContent]="timer">
+      <!-- {{ timer }} -->
+    </div>
   </div>
 </div>

@@ -6,4 +6,23 @@ $quaternary-color: #CC376D;
 
 body {
   background-color: $primary-color;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+}
+
+.lengths {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around
 }
