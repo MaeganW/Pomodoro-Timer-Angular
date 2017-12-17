@@ -15,7 +15,7 @@ export class AppComponent {
   breakTimer = this.breakLength * 60000;
 
   intervalId: any;
-  timer = this.sessionTimer;
+  timer: any = this.millisToMinutesAndSeconds(this.sessionTimer);
 
   onAudioClick() {
     this.hasAudio = !this.hasAudio;
@@ -40,11 +40,20 @@ export class AppComponent {
   playTimer() {
     this.intervalId = window.setInterval(() => {
       if (this.onSession) {
-        this.timer -= 1;
+        this.sessionTimer -= 1;
+        this.timer = this.millisToMinutesAndSeconds(this.sessionTimer);
         console.log('called', this.timer);
       }
       return false;
     }, 1000);
+  }
+
+  millisToMinutesAndSeconds(millis: any) {
+    const minutes = Math.floor(millis / 60000);
+    const seconds: any = ((millis % 60000) / 1000).toFixed(0);
+    // return (seconds === 60 ? (minutes + 1) + ':00' : minutes
+    // + ':' + (seconds < 10 ? '0' : '') + seconds);
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
   }
 
   // timer() {
