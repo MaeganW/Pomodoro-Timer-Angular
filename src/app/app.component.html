@@ -4,7 +4,7 @@
   </header>
   <label>Session</label>
 
-  <div class="lengths">
+  <!-- <div class="lengths">
     <div>
       <input [(ngModel)]="sessionLength" matInput>
       <p>{{sessionLength}}</p>
@@ -13,6 +13,20 @@
     <div>
       <input [(ngModel)]="breakLength" matInput>
       <p>{{breakLength}}</p>
+    </div>
+  </div> -->
+
+  <div class="lengths">
+    <div>
+      <span (click)="decrement(sessionLength)"> - </span>
+      <p [(ngModel)]="sessionLength">{{sessionLength}}</p>
+      <span (click)="increment('sessionLength')"> + </span>
+    </div>
+    <label>Break</label>
+    <div>
+      <span (click)="decrement(breakLength)"> - </span>
+      <p [(ngModel)]="breakLength">{{breakLength}}</p>
+      <span (click)="increment('breakLength')"> + </span>
     </div>
   </div>
 
