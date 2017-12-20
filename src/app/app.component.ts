@@ -48,6 +48,14 @@ export class AppComponent {
     }, 1000);
   }
 
+  increment(variable) {
+    (variable === 'breakLength') ? this.breakLength++ : this.sessionLength++;
+  }
+
+  decrement(variable) {
+    (variable === 'breakLength') ? this.breakLength-- : this.sessionLength--;
+  }
+
   millisToMinutesAndSeconds(millis: any) {
     const minutes = Math.floor(millis / 60000);
     const seconds: any = ((millis % 60000) / 1000).toFixed(0);
